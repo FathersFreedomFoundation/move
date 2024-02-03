@@ -1,0 +1,1746 @@
+<!-- path/filename: index.html -->
+<!-- Purpose: Ensure the iframe is responsive and functions correctly on iPhones -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensuring the viewport is set correctly for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Responsive Iframe for iPhone</title>
+    <style>
+        /* Base styles for iframe container */
+        .responsive-iframe-container {
+            position: relative;
+            overflow: hidden; /* Hide scrollbars */
+            width: 100%; /* Full width */
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Styles for iframe */
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            overflow: hidden; /* Hide scrollbars */
+        }
+
+        /* Adjust styles for mobile devices */
+        @media (max-width: 600px) {
+            .responsive-iframe-container {
+                height: 50vh; /* Adjust height for smaller mobile devices */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="responsive-iframe-container">
+        <iframe src="https://skybox.blockadelabs.com/e/97da6df4b9184232091cd5cb0faa933b" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIMOIRE</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* This will hide the default scrollbars */
+      background: #000; /* Setting the background to black */
+    }
+
+    #title {
+      position: absolute;
+      top: 20%; /* Adjusted to reduce vertical space */
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 35px;
+      letter-spacing: 12px;
+      margin-top: -20px; /* Adjusted to reduce vertical space */
+      padding-left: 10px;
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>THE UNIVERSE </span><br><span>GUIDED YOU HERE</span>
+  </div>
+</body>
+</html>
+
+
+
+Les Love Spells offers focused spells to help you achieve your desires. Our range includes love spells designed to draw a mysterious future significant other into your life, along with more specific spells aimed at enchanting the one your heart desires. We craft spells tailored to your unique needs to manifest your desired outcome.
+
+At Les Love Spells, we believe in the power of positivity, light, and love as natural forces that help good triumph over evil. Try our spells to expel negative people and energies from your life, altering the course of an unwritten future. Our protection spells encompass forces intended for self-improvement and self-love, helping to boost your confidence and even heal past heartaches. Our mirror spells deflect wrongdoing back onto the deliverer, but please remember that our work is in the light, and our intentions are never to harm anyone. While our spells shield you, they also allow those who have negatively impacted you to understand and feel the pain they may have caused.
+
+As your spirit guide has led you here, know that witchcraft is a serious practice and not something to be toyed with. At Les Love Spells, we take our craft seriously, working with energy and intention to manifest your desires with positive results. We ask that you use light and love as your guide with your spell, and we are confident this will maximize your results.
+
+To complete your spell, some basic information is necessary. Please be very clear about your intentions, and fully commit to your spell. There is no room for doubt as we utilize both your energy and cosmic forces to successfully complete your unique spell. Once your  has been cast, we will provide you with immediate instructions to help you manifest the fruits of your spell.
+
+Please keep in mind that results vary based on your level of commitment, intention, and ability to adhere to instructions. We also advise caution, as binding the wrong person to yourself via a love spell can sometimes lead to unfavorable outcomes. We do offer cord-cutting spells to reverse such situations, among others.
+
+Thank you for gracing us with your spirit. We hope this visit has provided you with the positive energy you need
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards Display</title>
+    <style>
+        /* Hide scrollbar for all elements and prevent scrolling on the entire page */
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 500px; /* Adjusted width to match the image */
+            height: 500px; /* Adjusted height to match the image */
+            margin: 10px;
+            border: none;
+            perspective: 1000px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flip .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+        }
+
+        .flip-card-front {
+            background-color: transparent;
+        }
+
+        .flip-card-back {
+            background-color: transparent;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front img, .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+
+        .show-button {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Adjustments to the glowing effect */
+        .flip-card::before, .flip-card::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 700px; /* Adjusted to match the image size */
+            height: 700px; /* Adjusted to match the image size */
+            transform: translate(-50%, -50%); /* Centering pivot */
+            border-radius: 40%;
+            background-image: url('https://i.imgur.com/KygFcuA.png'); /* Direct URL of the wheel image */
+            background-size: cover;
+            z-index: -1;
+            animation: spin 33.55s linear infinite;
+        }
+
+        /* Keyframes for the spinning animation */
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- Flip Card -->
+        <div class="flip-card" onclick="flipCard(this);">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://i.imgur.com/hBSrtar.png" alt="Card Front"> <!-- Use the direct URL of the wheel image -->
+                </div>
+                <div class="flip-card-back">
+                    <img src="your-image-url.png" alt="Card Back"> <!-- Use the direct URL of the wheel image -->
+                    <button class="show-button" onclick="this.style.display = 'none';">Hide Button</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional flip cards as needed -->
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flip');
+            setTimeout(function () {
+                // Open the URL in a new window/tab
+                window.open('https://leslovespells.godaddysites.com/love', '_blank');
+            }, 800); // Delay the redirection for 800 milliseconds (0.8 seconds)
+        }
+
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIMOIRE</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* This will hide the default scrollbars */
+      background: #000; /* Setting the background to black */
+    }
+
+    #title {
+      position: absolute;
+      top: 10%; /* Adjusted to reduce vertical space */
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 80px;
+      letter-spacing: 10px;
+      margin-top: -30px; /* Adjusted to reduce vertical space */
+      padding-left: 10px;
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>LOVE</span>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIMOIRE</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* This will hide the default scrollbars */
+      background: #000; /* Setting the background to black */
+    }
+
+    #title {
+      position: absolute;
+      top: 10%; /* Adjusted to reduce vertical space */
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 80px;
+      letter-spacing: 10px;
+      margin-top: -30px; /* Adjusted to reduce vertical space */
+      padding-left: 10px;
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>LOVE</span>
+  </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROSPERITY & WEALTH</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* Hides default scrollbars */
+      background: #000; /* Black background */
+    }
+
+    #title {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for perfect centering */
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 6vw; /* Responsive font size */
+      letter-spacing: 0.6vw; /* Responsive letter spacing */
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 600px) {
+      #title {
+        font-size: 10vw; /* Larger font size for smaller screens */
+        letter-spacing: 1vw; /* Larger letter spacing for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>PROSPERITY & ABUNDANCE</span>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Add any additional head elements here -->
+</head>
+<body>
+<script>
+const choose = a => a[Math.floor(Math.random() * a.length)]
+const speeds = [.63]
+const resont = [.5]
+const volmns = [1]
+const options = {
+  volume: choose(volmns),
+  resonance: choose(resont),
+  speed: choose(speeds),
+  rand: 0
+}
+
+const Composer = () => {
+  /******************************
+   * Original Author: Yota Morimoto
+   * Web Site: https://yota.tehis.net/asg/
+   */
+
+  let context, main, verb, bus, compressor
+
+  const trigger = Object.freeze({
+    trig: function () {
+      let prev = 0
+      let t = false
+      return function (val) {
+        t = prev < 0 && val >= 0
+        prev = val
+        return t
+      }
+    },
+    change: function () {
+      let prev = 0
+      let t = false
+      return function (val) {
+        t = prev != val
+        prev = val
+        return t
+      }
+    },
+    pulse: function (threshold) {
+      let prev = 0
+      let t = false
+      return function (b) {
+        if (b) prev++
+        if (prev == threshold) {
+          t = true
+          prev = 0
+        } else { t = false }
+        return t
+      }
+    }
+  })
+
+  const lowTrig = trigger.trig()
+  const highTrig = trigger.trig()
+  const lowChanged = trigger.change()
+  const bassChanged = trigger.change()
+  const highChanged = trigger.change()
+  const pulseTrig = trigger.trig()
+  const pulsed = trigger.pulse(10)
+  const roots = [21, 23, 24, 26, 28, 30]
+
+  let b = Float32Array.from({ length: 3 }, () => Math.random() * 2 - 1)
+  let m = [0, 4, 0, 9, 0, 4, 9]
+  let root = pickItem(b[1], 0, 20, roots)
+
+  options.rand = lerp(b[2], -1, 1, 0.05, 1)
+
+  function loop() {
+    main.gain.value = dbamp(lerp(options.volume, 0, 1, -60, 3))
+    compose()
+    setTimeout(() => loop(), expInterp(options.speed, 0, 1, 800, 80))
+  }
+
+  function compose() {
+    b = Float32Array.from({ length: 24 }, () => Math.random() < .25 ? Math.random() * 2 - 1 : 0)
+
+    if (pulsed(pulseTrig(b[0]))) {
+      root = pickItem(b[1], 0, 20, [21, 25, 28, 33])
+      console.table(options)
+    }
+
+    if (lowTrig(b[21])) {
+      const note = pickNote(b[21], 15, 35)
+      if (lowChanged(note)) {
+        options.rand = b[21]
+        sine(
+          midicps(note),
+          pickVolume(b[22], -24, -9),
+          b[23]
+        )
+      }
+    }
+
+    if (highTrig(b[11])) {
+      const note = pickNote(b[11], 20, 40)
+      if (highChanged(note)) {
+        //options.rand = b[11]
+        sine(
+          midicps(note),
+          pickVolume(b[12], -24, -9),
+          b[13]
+        )
+      }
+      saw(
+        midicps(pickNote(b[11], 5, 15)),
+        pickVolume(b[12], -20, -3),
+        b[13]
+      )
+    }
+    {
+      const note = pickNote(b[11], 5, 15)
+      if (bassChanged(note)) {
+        //options.rand = b[11]
+        sine(
+          midicps(note),
+          pickVolume(b[12], -30, -25),
+          b[13]
+        )
+      }
+    }    
+    
+  }
+
+  function pickItem(v, a, b, array) {
+    return array[round(lerp(v, -1, 1, a, b)) % (array.length - 1)]
+  }
+
+  function pickNote(v, a, b) {
+    return deg2key(lerp(v, -1, 1, a, b), m) + root
+  }
+
+  function pickVolume(v, a, b) {
+    return dbamp(lerp(v, -1, 1, a, b))
+  }
+
+  function mod(n, m) { return ((n % m) + m) % m }
+
+  function div(a, b) { return a / b >> 0 }
+
+  function deg2key(degree, mode) {
+    const size = mode.length
+    const deg = round(degree)
+    return (12 * div(deg, size)) + mode[mod(deg, size)]
+  }
+
+  function fractInterp(a, b, fraction) {
+    return a + fraction * (b - a)
+  }
+
+  function expInterp(x, a, b, c, d) {
+    if (x <= a) {
+      return c
+    }
+    if (x >= b) {
+      return d
+    }
+    return Math.pow(d / c, (x - a) / (b - a)) * c
+  }
+
+  function lerp(x, a, b, c, d) {
+    if (x <= a) {
+      return c
+    }
+    if (x >= b) {
+      return d
+    }
+    return (x - a) * (d - c) / (b - a) + c
+  }
+
+  function round(a) { return (a + (a > 0 ? 0.5 : -0.5)) << 0 }
+
+  function midicps(a) { return 440. * Math.pow(2.0, (a - 69.0) * 0.083333333333) }
+
+  function dbamp(a) { return Math.pow(10, a * 0.05) }
+
+  function createReverb(context) {
+    const length = 6 * context.sampleRate
+    const decay = 0.8
+    const buffer = context.createBuffer(2, length, context.sampleRate)
+    const noiseData = [buffer.getChannelData(0), buffer.getChannelData(1)]
+
+    const noise = Float32Array.from({ length }, () => Math.random() * 2 - 1)
+
+    for (let i = 0; i < length; i++) {
+      const k = noise[i]
+      noiseData[0][i] = k * Math.pow(1 - i / length, decay)
+      noiseData[1][i] = k * Math.pow(1 - i / length, decay)
+    }
+
+    const convolver = context.createConvolver()
+    convolver.buffer = buffer
+
+    return convolver
+  }
+
+  function init() {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.oAudioContext
+    context = new AudioContext({ latencyHint: 'balanced' })
+
+    verb = createReverb(context)
+    compressor = context.createDynamicsCompressor()
+    main = context.createGain()
+    bus = context.createGain()
+    bus.connect(verb)
+    verb.connect(main)
+    main.connect(compressor)
+    compressor.ratio.value = 4 // 12
+    compressor.release.value = .25 // 0.25
+    compressor.threshold.value = -35 // -24
+    compressor.connect(context.destination)
+
+    console.table(options)
+
+    requestAnimationFrame(loop)
+  }
+
+  function instrument(freq, amp, pan, type, att, rel, detune) {
+    const HALF_PI = Math.PI * 0.5
+    const vco = context.createOscillator()
+    const vca = context.createGain()
+    const out = context.createGain()
+    const panner = context.createStereoPanner()
+    //const wave = context.createPeriodicWave([.8, .75, .125, .0, .03, .25, .3, .1],[0, 0, 0, 0, 0, 0, 0, 0]);
+    panner.pan.value = pan
+    vco.detune.value = detune
+    //vco.setPeriodicWave(wave) // if type is 'custom'
+    vco.type = type //triangle, sine, square, sawtooth, custom
+    vco.frequency.value = freq
+    // xfade resonance
+    out.gain.value = Math.cos(options.resonance * HALF_PI)
+    bus.gain.value = Math.cos((1.0 - options.resonance) * HALF_PI)
+    vco.connect(vca)
+    vca.connect(panner)
+    panner.connect(out)
+    out.connect(main)
+    panner.connect(bus)
+    // env
+    const now = context.currentTime
+    const attack = now + att
+    const release = attack + rel
+    vca.gain.value = .0
+    vca.gain.setValueAtTime(vca.gain.value, now)
+    vca.gain.linearRampToValueAtTime(amp, attack)
+    vca.gain.exponentialRampToValueAtTime(0.001, release)
+    vco.start(now)
+    // gc
+    vco.stop(release + 0.1)
+    setTimeout(() => vco.disconnect(), 1000 * (release + 0.2))
+  }
+
+  function sine(freq, amp, pan) {
+    instrument(freq, amp, pan, 'sine', .01, .125, 0)
+  }
+
+  function saw(freq, amp, pan) {
+    instrument(freq, amp, pan, 'triangle', .025, .5, Math.sqrt(freq))
+  }
+
+  let bkpVol = options.volume
+  function toggle() {
+    if (options.volume > 0) {
+      bkpVol = options.volume
+      options.volume = 0
+    } else {
+      options.volume = bkpVol
+    }
+  }
+
+  window.addEventListener("click", () => {
+    if (!context) init()
+    else toggle()
+  })
+}
+
+const Shader = () => {
+  /*********
+   * made by Matthias Hurrle (@atzedent)
+   */
+  let canvas, gl
+  const dpr = window.devicePixelRatio
+
+  function resize() {
+    const {
+      innerWidth: width,
+      innerHeight: height
+    } = window
+
+    canvas.width = width * dpr
+    canvas.height = height * dpr
+
+    gl.viewport(0, 0, width * dpr, height * dpr)
+  }
+
+  window.onresize = resize
+
+  const vertexSource = `#version 300 es
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    
+    in vec4 position;
+    
+    void main(void) {
+    gl_Position = position;
+    }
+  `
+
+  const fragmentSource = `#version 300 es
+   /*********
+    * made by Matthias Hurrle (@atzedent)
+    */
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    
+    out vec4 fragColor;
+    
+    uniform vec2 resolution;
+    uniform float time;
+    uniform float rand;
+    #define R resolution
+    #define T (15.+time)
+    #define S smoothstep
+    
+    mat2 rot(float a) {
+      float s=sin(a), c=cos(a);
+      return mat2(c,-s,s,c);
+    }
+    
+    vec3 palette(float k) {
+      vec3
+      a = vec3(.24),
+      b = a,
+      c = 2.*a,
+      d = vec3(.1,.08,.07);
+    
+      return a+b*cos(3.1415*(c*k+d));
+    }
+    
+    vec3 pattern(vec2 uv, float t) {
+      vec3 col = vec3(0),
+      c = col,
+      p = normalize(vec3(uv, 1))*.5,
+      q=p;
+    
+      const float steps=30.;
+      float d = 1.;
+    
+      for (float i=.0; i<steps; i++) {
+        q += p;
+        d += 2.*dot(cos(q.yzx+t),sin(q+t));
+        d = cos(d+sin(t)*.5);
+        c = vec3(steps-i);
+        c *= 1.+sin(i+vec3(1,2,3));
+        c *= 5e-6*pow(d+1.,10.);
+        col += c;
+      }
+    
+      return pow(S(.0,1.,col), vec3(1.2))*1.4;
+    }
+    
+    void main(void) {
+      vec2 uv = (gl_FragCoord.xy-.5*R)/min(R.x, R.y),
+      p = uv*1.618, q = p;
+      vec3 col = vec3(0);
+      float t=T*.2;
+      
+      for (float i=.0; i<2.; i++) {
+        p=fract(p*=rot(.785398+.785398*(i+1.)))-.5;
+        p *= 1.618;
+        q *= rot(t*.2);
+        float n = 6.3/(5.+i),
+        a = atan(q.y, q.x)+n*.25;
+        col = palette(2.*(1.+sin(a*5.)*(sin(T+S(.0, 1., .5+.5*rand))*.5+.7))+(1.-length(fwidth(col))+distance(q*2.,p)-T*.2));
+        col = mix(col, pattern(q,t), .25);
+      }
+      
+      col = pow(col, vec3(.4545));
+      col = col*col*(3.-2.*col);
+      
+      fragColor = vec4(col, 1);
+    }
+  `
+
+  function compile(shader, source) {
+    gl.shaderSource(shader, source)
+    gl.compileShader(shader)
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(shader))
+    }
+  }
+
+  let program
+
+  function setup() {
+    const vs = gl.createShader(gl.VERTEX_SHADER)
+    const fs = gl.createShader(gl.FRAGMENT_SHADER)
+
+    compile(vs, vertexSource)
+    compile(fs, fragmentSource)
+
+    program = gl.createProgram()
+
+    gl.attachShader(program, vs)
+    gl.attachShader(program, fs)
+    gl.linkProgram(program)
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(program))
+    }
+  }
+
+  let vertices, buffer
+
+  function init() {
+    vertices = [
+      -1, -1, 1,
+      -1, -1, 1,
+      -1, 1, 1,
+      -1, 1, 1
+    ]
+    buffer = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
+
+    const position = gl.getAttribLocation(program, "position")
+
+    gl.enableVertexAttribArray(position)
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0)
+
+    program.resolution = gl.getUniformLocation(program, "resolution")
+    program.time = gl.getUniformLocation(program, "time")
+    program.rand = gl.getUniformLocation(program, "rand")
+  }
+
+  function loop(now) {
+    gl.clearColor(0, 0, 0, 1)
+    gl.clear(gl.COLOR_BUFFER_BIT)
+    gl.useProgram(program)
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+    gl.uniform2f(program.resolution, canvas.width, canvas.height)
+    gl.uniform1f(program.time, options.speed * now * 1e-3)
+    gl.uniform1f(program.rand, options.rand)
+    gl.drawArrays(gl.TRIANGLES, 0, vertices.length * 0.5)
+
+    requestAnimationFrame(loop)
+  }
+
+  const style = document.createElement("style")
+  style.innerText = `
+  p:hover { scale: 1.1; }
+  `
+  canvas = document.createElement("canvas")
+  const playHint = document.createElement("p")
+  playHint.innerText = ""
+  playHint.style = "grid-row: 1/-1;grid-column: 1/-1;place-self: center;font: 5vw system-ui;text-align: center;color: black;text-shadow: #fff 1px 150px 10px;margin: 0;transition: scale 800ms ease-out 100ms;"
+  window.onclick = () => playHint.remove()
+  document.body.innerHTML = ""
+  document.body.appendChild(style)
+  document.body.appendChild(canvas)
+  document.body.appendChild(playHint)
+  document.body.style = "margin:0;overflow:hidden;cursor:pointer;display:grid;"
+  canvas.style = "width: 120%;height: auto;object-fit: contain;grid-column: 1/-1;grid-row: 1/-1;"
+  gl = canvas.getContext("webgl2")
+
+  setup()
+  init()
+  resize()
+  loop(0)
+}
+
+Shader()
+Composer()
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards Display</title>
+    <style>
+        /* Hide scrollbar for all elements and prevent scrolling on the entire page */
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 500px; /* Adjusted width to match the image */
+            height: 500px; /* Adjusted height to match the image */
+            margin: 10px;
+            border: none;
+            perspective: 1000px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flip .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+        }
+
+        .flip-card-front {
+            background-color: transparent;
+        }
+
+        .flip-card-back {
+            background-color: transparent;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front img, .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+
+        .show-button {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Adjustments to the glowing effect */
+        .flip-card::before, .flip-card::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px; /* Adjusted to match the image size */
+            height: 600px; /* Adjusted to match the image size */
+            transform: translate(-50%, -50%); /* Centering pivot */
+            border-radius: 40%;
+            background-image: url('https://i.imgur.com/TP36bJY.png'); /* Direct URL of the wheel image */
+            background-size: cover;
+            z-index: -1;
+            animation: spin 33.55s linear infinite;
+        }
+
+        /* Keyframes for the spinning animation */
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- Flip Card -->
+        <div class="flip-card" onclick="flipCard(this);">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://i.imgur.com/dmmL2sf.png" alt="Card Front"> <!-- Use the direct URL of the wheel image -->
+                </div>
+                <div class="flip-card-back">
+                    <img src="your-image-url.png" alt="Card Back"> <!-- Use the direct URL of the wheel image -->
+                    <button class="show-button" onclick="this.style.display = 'none';">Hide Button</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional flip cards as needed -->
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flip');
+            setTimeout(function () {
+                // Open the URL in a new window/tab
+                window.open('https://leslovespells.godaddysites.com/protection-%26-justice-1');
+            }, 800); // Delay the redirection for 800 milliseconds (0.8 seconds)
+        }
+
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+</html>
+
+
+ </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROSPERITY & WEALTH</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* Hides default scrollbars */
+      background: #000; /* Black background */
+    }
+
+    #title {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for perfect centering */
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 6vw; /* Responsive font size */
+      letter-spacing: 0.6vw; /* Responsive letter spacing */
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 600px) {
+      #title {
+        font-size: 10vw; /* Larger font size for smaller screens */
+        letter-spacing: 1vw; /* Larger letter spacing for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>PROTECTION & JUSTICE</span>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Add any additional head elements here -->
+</head>
+<body>
+<script>
+const choose = a => a[Math.floor(Math.random() * a.length)]
+const speeds = [.63]
+const resont = [.5]
+const volmns = [1]
+const options = {
+  volume: choose(volmns),
+  resonance: choose(resont),
+  speed: choose(speeds),
+  rand: 0
+}
+
+const Composer = () => {
+  /******************************
+   * Original Author: Yota Morimoto
+   * Web Site: https://yota.tehis.net/asg/
+   */
+
+  let context, main, verb, bus, compressor
+
+  const trigger = Object.freeze({
+    trig: function () {
+      let prev = 0
+      let t = false
+      return function (val) {
+        t = prev < 0 && val >= 0
+        prev = val
+        return t
+      }
+    },
+    change: function () {
+      let prev = 0
+      let t = false
+      return function (val) {
+        t = prev != val
+        prev = val
+        return t
+      }
+    },
+    pulse: function (threshold) {
+      let prev = 0
+      let t = false
+      return function (b) {
+        if (b) prev++
+        if (prev == threshold) {
+          t = true
+          prev = 0
+        } else { t = false }
+        return t
+      }
+    }
+  })
+
+  const lowTrig = trigger.trig()
+  const highTrig = trigger.trig()
+  const lowChanged = trigger.change()
+  const bassChanged = trigger.change()
+  const highChanged = trigger.change()
+  const pulseTrig = trigger.trig()
+  const pulsed = trigger.pulse(10)
+  const roots = [21, 23, 24, 26, 28, 30]
+
+  let b = Float32Array.from({ length: 3 }, () => Math.random() * 2 - 1)
+  let m = [0, 4, 0, 9, 0, 4, 9]
+  let root = pickItem(b[1], 0, 20, roots)
+
+  options.rand = lerp(b[2], -1, 1, 0.05, 1)
+
+  function loop() {
+    main.gain.value = dbamp(lerp(options.volume, 0, 1, -60, 3))
+    compose()
+    setTimeout(() => loop(), expInterp(options.speed, 0, 1, 800, 80))
+  }
+
+  function compose() {
+    b = Float32Array.from({ length: 24 }, () => Math.random() < .25 ? Math.random() * 2 - 1 : 0)
+
+    if (pulsed(pulseTrig(b[0]))) {
+      root = pickItem(b[1], 0, 20, [21, 25, 28, 33])
+      console.table(options)
+    }
+
+    if (lowTrig(b[21])) {
+      const note = pickNote(b[21], 15, 35)
+      if (lowChanged(note)) {
+        options.rand = b[21]
+        sine(
+          midicps(note),
+          pickVolume(b[22], -24, -9),
+          b[23]
+        )
+      }
+    }
+
+    if (highTrig(b[11])) {
+      const note = pickNote(b[11], 20, 40)
+      if (highChanged(note)) {
+        //options.rand = b[11]
+        sine(
+          midicps(note),
+          pickVolume(b[12], -24, -9),
+          b[13]
+        )
+      }
+      saw(
+        midicps(pickNote(b[11], 5, 15)),
+        pickVolume(b[12], -20, -3),
+        b[13]
+      )
+    }
+    {
+      const note = pickNote(b[11], 5, 15)
+      if (bassChanged(note)) {
+        //options.rand = b[11]
+        sine(
+          midicps(note),
+          pickVolume(b[12], -30, -25),
+          b[13]
+        )
+      }
+    }    
+    
+  }
+
+  function pickItem(v, a, b, array) {
+    return array[round(lerp(v, -1, 1, a, b)) % (array.length - 1)]
+  }
+
+  function pickNote(v, a, b) {
+    return deg2key(lerp(v, -1, 1, a, b), m) + root
+  }
+
+  function pickVolume(v, a, b) {
+    return dbamp(lerp(v, -1, 1, a, b))
+  }
+
+  function mod(n, m) { return ((n % m) + m) % m }
+
+  function div(a, b) { return a / b >> 0 }
+
+  function deg2key(degree, mode) {
+    const size = mode.length
+    const deg = round(degree)
+    return (12 * div(deg, size)) + mode[mod(deg, size)]
+  }
+
+  function fractInterp(a, b, fraction) {
+    return a + fraction * (b - a)
+  }
+
+  function expInterp(x, a, b, c, d) {
+    if (x <= a) {
+      return c
+    }
+    if (x >= b) {
+      return d
+    }
+    return Math.pow(d / c, (x - a) / (b - a)) * c
+  }
+
+  function lerp(x, a, b, c, d) {
+    if (x <= a) {
+      return c
+    }
+    if (x >= b) {
+      return d
+    }
+    return (x - a) * (d - c) / (b - a) + c
+  }
+
+  function round(a) { return (a + (a > 0 ? 0.5 : -0.5)) << 0 }
+
+  function midicps(a) { return 440. * Math.pow(2.0, (a - 69.0) * 0.083333333333) }
+
+  function dbamp(a) { return Math.pow(10, a * 0.05) }
+
+  function createReverb(context) {
+    const length = 6 * context.sampleRate
+    const decay = 0.8
+    const buffer = context.createBuffer(2, length, context.sampleRate)
+    const noiseData = [buffer.getChannelData(0), buffer.getChannelData(1)]
+
+    const noise = Float32Array.from({ length }, () => Math.random() * 2 - 1)
+
+    for (let i = 0; i < length; i++) {
+      const k = noise[i]
+      noiseData[0][i] = k * Math.pow(1 - i / length, decay)
+      noiseData[1][i] = k * Math.pow(1 - i / length, decay)
+    }
+
+    const convolver = context.createConvolver()
+    convolver.buffer = buffer
+
+    return convolver
+  }
+
+  function init() {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.oAudioContext
+    context = new AudioContext({ latencyHint: 'balanced' })
+
+    verb = createReverb(context)
+    compressor = context.createDynamicsCompressor()
+    main = context.createGain()
+    bus = context.createGain()
+    bus.connect(verb)
+    verb.connect(main)
+    main.connect(compressor)
+    compressor.ratio.value = 4 // 12
+    compressor.release.value = .25 // 0.25
+    compressor.threshold.value = -35 // -24
+    compressor.connect(context.destination)
+
+    console.table(options)
+
+    requestAnimationFrame(loop)
+  }
+
+  function instrument(freq, amp, pan, type, att, rel, detune) {
+    const HALF_PI = Math.PI * 0.5
+    const vco = context.createOscillator()
+    const vca = context.createGain()
+    const out = context.createGain()
+    const panner = context.createStereoPanner()
+    //const wave = context.createPeriodicWave([.8, .75, .125, .0, .03, .25, .3, .1],[0, 0, 0, 0, 0, 0, 0, 0]);
+    panner.pan.value = pan
+    vco.detune.value = detune
+    //vco.setPeriodicWave(wave) // if type is 'custom'
+    vco.type = type //triangle, sine, square, sawtooth, custom
+    vco.frequency.value = freq
+    // xfade resonance
+    out.gain.value = Math.cos(options.resonance * HALF_PI)
+    bus.gain.value = Math.cos((1.0 - options.resonance) * HALF_PI)
+    vco.connect(vca)
+    vca.connect(panner)
+    panner.connect(out)
+    out.connect(main)
+    panner.connect(bus)
+    // env
+    const now = context.currentTime
+    const attack = now + att
+    const release = attack + rel
+    vca.gain.value = .0
+    vca.gain.setValueAtTime(vca.gain.value, now)
+    vca.gain.linearRampToValueAtTime(amp, attack)
+    vca.gain.exponentialRampToValueAtTime(0.001, release)
+    vco.start(now)
+    // gc
+    vco.stop(release + 0.1)
+    setTimeout(() => vco.disconnect(), 1000 * (release + 0.2))
+  }
+
+  function sine(freq, amp, pan) {
+    instrument(freq, amp, pan, 'sine', .01, .125, 0)
+  }
+
+  function saw(freq, amp, pan) {
+    instrument(freq, amp, pan, 'triangle', .025, .5, Math.sqrt(freq))
+  }
+
+  let bkpVol = options.volume
+  function toggle() {
+    if (options.volume > 0) {
+      bkpVol = options.volume
+      options.volume = 0
+    } else {
+      options.volume = bkpVol
+    }
+  }
+
+  window.addEventListener("click", () => {
+    if (!context) init()
+    else toggle()
+  })
+}
+
+const Shader = () => {
+  /*********
+   * made by Matthias Hurrle (@atzedent)
+   */
+  let canvas, gl
+  const dpr = window.devicePixelRatio
+
+  function resize() {
+    const {
+      innerWidth: width,
+      innerHeight: height
+    } = window
+
+    canvas.width = width * dpr
+    canvas.height = height * dpr
+
+    gl.viewport(0, 0, width * dpr, height * dpr)
+  }
+
+  window.onresize = resize
+
+  const vertexSource = `#version 300 es
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    
+    in vec4 position;
+    
+    void main(void) {
+    gl_Position = position;
+    }
+  `
+
+  const fragmentSource = `#version 300 es
+   /*********
+    * made by Matthias Hurrle (@atzedent)
+    */
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    
+    out vec4 fragColor;
+    
+    uniform vec2 resolution;
+    uniform float time;
+    uniform float rand;
+    #define R resolution
+    #define T (15.+time)
+    #define S smoothstep
+    
+    mat2 rot(float a) {
+      float s=sin(a), c=cos(a);
+      return mat2(c,-s,s,c);
+    }
+    
+    vec3 palette(float k) {
+      vec3
+      a = vec3(.24),
+      b = a,
+      c = 2.*a,
+      d = vec3(.1,.08,.07);
+    
+      return a+b*cos(3.1415*(c*k+d));
+    }
+    
+    vec3 pattern(vec2 uv, float t) {
+      vec3 col = vec3(0),
+      c = col,
+      p = normalize(vec3(uv, 1))*.5,
+      q=p;
+    
+      const float steps=30.;
+      float d = 1.;
+    
+      for (float i=.0; i<steps; i++) {
+        q += p;
+        d += 2.*dot(cos(q.yzx+t),sin(q+t));
+        d = cos(d+sin(t)*.5);
+        c = vec3(steps-i);
+        c *= 1.+sin(i+vec3(1,2,3));
+        c *= 5e-6*pow(d+1.,10.);
+        col += c;
+      }
+    
+      return pow(S(.0,1.,col), vec3(1.2))*1.4;
+    }
+    
+    void main(void) {
+      vec2 uv = (gl_FragCoord.xy-.5*R)/min(R.x, R.y),
+      p = uv*1.618, q = p;
+      vec3 col = vec3(0);
+      float t=T*.2;
+      
+      for (float i=.0; i<2.; i++) {
+        p=fract(p*=rot(.785398+.785398*(i+1.)))-.5;
+        p *= 1.618;
+        q *= rot(t*.2);
+        float n = 6.3/(5.+i),
+        a = atan(q.y, q.x)+n*.25;
+        col = palette(2.*(1.+sin(a*5.)*(sin(T+S(.0, 1., .5+.5*rand))*.5+.7))+(1.-length(fwidth(col))+distance(q*2.,p)-T*.2));
+        col = mix(col, pattern(q,t), .25);
+      }
+      
+      col = pow(col, vec3(.4545));
+      col = col*col*(3.-2.*col);
+      
+      fragColor = vec4(col, 1);
+    }
+  `
+
+  function compile(shader, source) {
+    gl.shaderSource(shader, source)
+    gl.compileShader(shader)
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(shader))
+    }
+  }
+
+  let program
+
+  function setup() {
+    const vs = gl.createShader(gl.VERTEX_SHADER)
+    const fs = gl.createShader(gl.FRAGMENT_SHADER)
+
+    compile(vs, vertexSource)
+    compile(fs, fragmentSource)
+
+    program = gl.createProgram()
+
+    gl.attachShader(program, vs)
+    gl.attachShader(program, fs)
+    gl.linkProgram(program)
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(program))
+    }
+  }
+
+  let vertices, buffer
+
+  function init() {
+    vertices = [
+      -1, -1, 1,
+      -1, -1, 1,
+      -1, 1, 1,
+      -1, 1, 1
+    ]
+    buffer = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
+
+    const position = gl.getAttribLocation(program, "position")
+
+    gl.enableVertexAttribArray(position)
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0)
+
+    program.resolution = gl.getUniformLocation(program, "resolution")
+    program.time = gl.getUniformLocation(program, "time")
+    program.rand = gl.getUniformLocation(program, "rand")
+  }
+
+  function loop(now) {
+    gl.clearColor(0, 0, 0, 1)
+    gl.clear(gl.COLOR_BUFFER_BIT)
+    gl.useProgram(program)
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+    gl.uniform2f(program.resolution, canvas.width, canvas.height)
+    gl.uniform1f(program.time, options.speed * now * 1e-3)
+    gl.uniform1f(program.rand, options.rand)
+    gl.drawArrays(gl.TRIANGLES, 0, vertices.length * 0.5)
+
+    requestAnimationFrame(loop)
+  }
+
+  const style = document.createElement("style")
+  style.innerText = `
+  p:hover { scale: 1.1; }
+  `
+  canvas = document.createElement("canvas")
+  const playHint = document.createElement("p")
+  playHint.innerText = ""
+  playHint.style = "grid-row: 1/-1;grid-column: 1/-1;place-self: center;font: 5vw system-ui;text-align: center;color: black;text-shadow: #fff 1px 150px 10px;margin: 0;transition: scale 800ms ease-out 100ms;"
+  window.onclick = () => playHint.remove()
+  document.body.innerHTML = ""
+  document.body.appendChild(style)
+  document.body.appendChild(canvas)
+  document.body.appendChild(playHint)
+  document.body.style = "margin:0;overflow:hidden;cursor:pointer;display:grid;"
+ canvas.style = "width: 100%; height: auto; object-fit: cover; grid-column: 1 / -1; grid-row: 1 / -1;";
+gl = canvas.getContext("webgl2");
+
+
+  setup()
+  init()
+  resize()
+  loop(0)
+}
+
+Shader()
+Composer()
+ </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Embed</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
+            height: 100%;
+            background-color: #000; /* Optional: Change to desired background color */
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* Aspect ratio of 16:9 */
+            overflow: hidden; /* Hide scrollbars */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/upKM4mDIKP0?si=uRng6kywY6XoseKP&autoplay=1&loop=1&playlist=upKM4mDIKP0&rel=0&volume=25" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uniform Stylish Button Layout</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: black;
+        overflow: hidden; /* Hide scrollbars */
+    }
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.7rem;
+        appearance: none;
+        border: 0;
+        background: none;
+        position: relative;
+        color: white;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        font-family: system-ui, sans-serif;
+        cursor: pointer;
+        transition: color 0.5s ease-in-out;
+    }
+    button:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,1);
+        border-radius: inherit;
+        mix-blend-mode: overlay;
+    }
+    button iframe {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(1.2) rotate(15deg);
+        opacity: 0.25;
+        filter: blur(5px);
+        transition: all 0.5s ease-in-out;
+        pointer-events: none; /* Prevent iframe from capturing clicks */
+    }
+    button span {
+        position: relative;
+        z-index: 1;
+        opacity: 0.75;
+        transition: opacity 0.5s ease-in-out;
+    }
+    button:hover iframe {
+        transform: translate(-50%,-50%) scale(0.5);
+        opacity: 1;
+        filter: blur(0);
+    }
+    button:hover span {
+        opacity: 1;
+    }
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Button 1: Love -->
+    <button onclick="window.open('https://leslovespells.godaddysites.com/love', '_blank')">
+        <span>LOVE</span>
+        <iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgICAgIDxoZWFkPgogICAgICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KICAgICAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgICAgICBodG1sLCBib2R5LCBpZnJhbWUsIGNhbnZhc3sKICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgICAgIDxzY3JpcHQgdHlwZT0ibW9kdWxlIj4KICAgICAgICAgICAgICAgICAgICBpbXBvcnQgUmVhY3QsIHt1c2VSZWZ9IGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0QDE4LjAuMic7CiAgICAgICAgICAgICAgICAgICAgaW1wb3J0IFJlYWN0RE9NIGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0LWRvbUAxOC4wLjInOwogICAgICAgICAgICAgICAgICAgIGltcG9ydCB7Q2FudmFzLCB1c2VGcmFtZX0gZnJvbSAnaHR0cHM6Ly9jZG4uc2t5cGFjay5kZXYvQHJlYWN0LXRocmVlL2ZpYmVyQDcuMC4yNCc7CgogICAgICAgICAgICAgICAgICAgIGNvbnN0IFRleHR1cmVNZXNoID0gKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBtZXNoID0gdXNlUmVmKG51bGwpCiAgICAgICAgICAgICAgICAgICAgICAgIHVzZUZyYW1lKHN0YXRlID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgY2xvY2ssIG1vdXNlLCBnbCwgc2NlbmUsIGNhbWVyYSB9ID0gc3RhdGUKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1lc2guY3VycmVudCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzaC5jdXJyZW50Lm1hdGVyaWFsLnVuaWZvcm1zLnVfbW91c2UudmFsdWUgPSBbbW91c2UueCwgbW91c2UueV0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNoLmN1cnJlbnQubWF0ZXJpYWwudW5pZm9ybXMudV90aW1lLnZhbHVlID0gY2xvY2suZ2V0RWxhcHNlZFRpbWUoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNyZWF0ZUVsZW1lbnQoJ21lc2gnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZjptZXNoLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBbMCwwLDBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvdGF0aW9uOiBbMCwwLDBdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgUmVhY3QuY3JlYXRlRWxlbWVudCgncGxhbmVHZW9tZXRyeScse2FyZ3M6WzEwMjQsMTAyNF19KSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KCdzaGFkZXJNYXRlcmlhbCcsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyYWdtZW50U2hhZGVyOiBgLy8gRnJhZ21lbnQgc2hhZGVyCgovLyBVbmlmb3Jtcwp1bmlmb3JtIHZlYzIgdV9yZXNvbHV0aW9uOwp1bmlmb3JtIHZlYzIgdV9tb3VzZTsKdW5pZm9ybSBmbG9hdCB1X3RpbWU7CnVuaWZvcm0gdmVjMyB1X2NvbG9yOwp1bmlmb3JtIGZsb2F0IHVfc2NhbGU7IAp1bmlmb3JtIGZsb2F0IHVfZGlzdG9ydF9zY2FsZTsKdW5pZm9ybSBmbG9hdCB1X3Bvd2VyOwp1bmlmb3JtIGZsb2F0IHVfc3BlZWQ7CnVuaWZvcm0gZmxvYXQgdV94Owp1bmlmb3JtIGZsb2F0IHVfeTsKdW5pZm9ybSBmbG9hdCB1X2l0ZXJhdGlvbnM7CiAgICAKI2RlZmluZSBwb3dlciAxLgojZGVmaW5lIHpvb21PdXQgMy4KI2RlZmluZSByb3QgMS4KI2RlZmluZSBpdGVyIDUwLgojZGVmaW5lIGh1ZVBvd2VyIDAuNwojZGVmaW5lIGdsb3cgMC41CiNkZWZpbmUgU3BlZWQgMS41CiNkZWZpbmUgV2F2ZVNwZWVkIDIuCiNkZWZpbmUgQnJpZ2h0bmVzcyAwLjUKCnZvaWQgbWFpbigpCnsKICAgIC8vIE5vcm1hbGl6ZWQgcGl4ZWwgY29vcmRpbmF0ZXMgKGZyb20gMCB0byAxKQogICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CgoJdmVjMiBYWVNjYWxlID0gdmVjMigxLjAtdV9zY2FsZSwxLjAtdV9zY2FsZSk7Cgl2ZWMyIFhZTW92ZSA9IHZlYzIodV94LHVfeSk7CglmbG9hdCBpdGVyYXRpb25zID0gaXRlciAqIHVfaXRlcmF0aW9uczsKCiAgdXYgKj0gem9vbU91dDsKCXV2Lnh5ID0gdXYueHkgKiBYWVNjYWxlOwoJdXYueHkgPSB1di54eSArIFhZTW92ZTsKCXZlYzMgZmluYWxDb2wgPSB2ZWMzKDAsMCwwKTsKCWZsb2F0IGhhbGZEaXN0b3J0ID0gdV9kaXN0b3J0X3NjYWxlIC8gMC41OwoJZmxvYXQgZGlzdG9ydHNjMiA9IHVfZGlzdG9ydF9zY2FsZSAvIHVfZGlzdG9ydF9zY2FsZSArIGhhbGZEaXN0b3J0OwogICAgCglmb3IoZmxvYXQgaSA9IDEuMDsgaSA8IGl0ZXJhdGlvbnM7IGkrKyl7CgkJdXYueCArPSB1X3Bvd2VyIC8gaSAqIHNpbihpICogdV9kaXN0b3J0X3NjYWxlICogdXYueSAtICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCQl1di55ICs9IHVfcG93ZXIgLyBpICogc2luKGkgKiBkaXN0b3J0c2MyICogdXYueCArICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCX0KICAgIAoJdmVjMyBjb2wgPSB2ZWMzKHZlYzMoZ2xvdyxnbG93LGdsb3cpL3NpbigodV90aW1lKldhdmVTcGVlZCp1X3NwZWVkKS1sZW5ndGgodXYueXgpIC0gdXYueSkpOwoJZmluYWxDb2wgPSB2ZWMzKGNvbCpjb2wpOwogICAgdmVjMyBDb2xvciA9IHZlYzMoMS4sMS4sMS4pICogQnJpZ2h0bmVzczsKCQogICAgQ29sb3IgPSBDb2xvcipDb2xvciAqIDAuNSArIDAuNSpjb3MoKHVfdGltZSp1X3NwZWVkKSt1di54eXgrdmVjMygwLDIsNCkpICogaHVlUG93ZXI7CgoKICAgIC8vIE91dHB1dCB0byBzY3JlZW4KICAgIGdsX0ZyYWdDb2xvciA9IHZlYzQoZmluYWxDb2wucmdiICogQ29sb3IsIDEuMCkgKiBwb3dlcjsKfWAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVydGV4U2hhZGVyOiBgLy8gVmVydGV4IHNoYWRlcgoKdm9pZCBtYWluKCkgewogIGdsX1Bvc2l0aW9uID0gcHJvamVjdGlvbk1hdHJpeCAqIG1vZGVsVmlld01hdHJpeCAqIHZlYzQocG9zaXRpb24sIDEuMCk7Cn1gLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaWZvcm1zOiB7InVfY29sb3IiOnsidmFsdWUiOlsxLDAsMF19LCJ1X3NjYWxlIjp7InZhbHVlIjowLjIxfSwidV9kaXN0b3J0X3NjYWxlIjp7InZhbHVlIjowLjUzNX0sInVfcG93ZXIiOnsidmFsdWUiOjAuMTU3fSwidV9zcGVlZCI6eyJ2YWx1ZSI6MC4yMjJ9LCJ1X3giOnsidmFsdWUiOjAuNX0sInVfeSI6eyJ2YWx1ZSI6MC44NTl9LCJ1X2l0ZXJhdGlvbnMiOnsidmFsdWUiOjAuMTIyfSwidV90aW1lIjp7InZhbHVlIjowfSwidV9tb3VzZSI6eyJ2YWx1ZSI6WzAsMF19LCJ1X3Jlc29sdXRpb24iOnsidmFsdWUiOlsxMDI0LDEwMjRdfX0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lTGluZXdpZHRoOiAwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpdGhlcmluZzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmxhdFNoYWRpbmc6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG91YmxlU2lkZWQ6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2xzbFZlcnNpb246ICIxMDAiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICApOyAgCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS5yZW5kZXIoUmVhY3QuY3JlYXRlRWxlbWVudChDYW52YXMsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2w6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVzZXJ2ZURyYXdpbmdCdWZmZXI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlbXVsdGlwbGllZEFscGhhOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbHBoYTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc3BhcmVudDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbnRpYWxpYXM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlY2lzaW9uOiAiaGlnaHAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvd2VyUHJlZmVyZW5jZTogImhpZ2gtcGVyZm9ybWFuY2UiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZHByOiBbMiwyXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbWVyYTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvdjogNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmVhcjogMC4xLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZhcjogMTAwMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogWzAsMCw1XQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlOnsgaGVpZ2h0OiA1MTIsIHdpZHRoOiA1MTIgfQogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KFRleHR1cmVNZXNoKSAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICksIGRvY3VtZW50LmJvZHkpOwogICAgICAgICAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgICAgIDwvaGVhZD4KICAgICAgICAgICAgPGJvZHk+CjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9seWdpYS5mNzQ5MDU5NC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvYWRkLmE1NTI0MGRkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9ib29rLjVmYjExYjhkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9jb2RlLjQyOGIxOGY1LnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9vdmVyZmxvdy44ZDUwNDE1ZC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvY2xvc2UuNjRiODBkMDAuc3ZnIC0tPgoKPCEtLSBBU1NFVCBOT1QgSU5MSU5FRDogYXNzZXRzL3RyYXNoLjUyNGRiY2QzLnN2ZyAtLT4KPC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 512px;height:512px;" /></iframe>
+</button>
+
+<button onclick="window.open('https://leslovespells.godaddysites.com/prosperity-%26-abundance', '_blank')">
+        <span>MONEY</span>  
+        <iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgICAgIDxoZWFkPgogICAgICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KICAgICAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgICAgICBodG1sLCBib2R5LCBpZnJhbWUsIGNhbnZhc3sKICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgICAgIDxzY3JpcHQgdHlwZT0ibW9kdWxlIj4KICAgICAgICAgICAgICAgICAgICBpbXBvcnQgUmVhY3QsIHt1c2VSZWZ9IGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0QDE4LjAuMic7CiAgICAgICAgICAgICAgICAgICAgaW1wb3J0IFJlYWN0RE9NIGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0LWRvbUAxOC4wLjInOwogICAgICAgICAgICAgICAgICAgIGltcG9ydCB7Q2FudmFzLCB1c2VGcmFtZX0gZnJvbSAnaHR0cHM6Ly9jZG4uc2t5cGFjay5kZXYvQHJlYWN0LXRocmVlL2ZpYmVyQDcuMC4yNCc7CgogICAgICAgICAgICAgICAgICAgIGNvbnN0IFRleHR1cmVNZXNoID0gKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBtZXNoID0gdXNlUmVmKG51bGwpCiAgICAgICAgICAgICAgICAgICAgICAgIHVzZUZyYW1lKHN0YXRlID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgY2xvY2ssIG1vdXNlLCBnbCwgc2NlbmUsIGNhbWVyYSB9ID0gc3RhdGUKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1lc2guY3VycmVudCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzaC5jdXJyZW50Lm1hdGVyaWFsLnVuaWZvcm1zLnVfbW91c2UudmFsdWUgPSBbbW91c2UueCwgbW91c2UueV0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNoLmN1cnJlbnQubWF0ZXJpYWwudW5pZm9ybXMudV90aW1lLnZhbHVlID0gY2xvY2suZ2V0RWxhcHNlZFRpbWUoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNyZWF0ZUVsZW1lbnQoJ21lc2gnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZjptZXNoLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBbMCwwLDBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvdGF0aW9uOiBbMCwwLDBdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgUmVhY3QuY3JlYXRlRWxlbWVudCgncGxhbmVHZW9tZXRyeScse2FyZ3M6WzEwMjQsMTAyNF19KSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KCdzaGFkZXJNYXRlcmlhbCcsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyYWdtZW50U2hhZGVyOiBgLy8gRnJhZ21lbnQgc2hhZGVyCgovLyBVbmlmb3Jtcwp1bmlmb3JtIHZlYzIgdV9yZXNvbHV0aW9uOwp1bmlmb3JtIHZlYzIgdV9tb3VzZTsKdW5pZm9ybSBmbG9hdCB1X3RpbWU7CnVuaWZvcm0gdmVjMyB1X2NvbG9yOwp1bmlmb3JtIGZsb2F0IHVfc2NhbGU7IAp1bmlmb3JtIGZsb2F0IHVfZGlzdG9ydF9zY2FsZTsKdW5pZm9ybSBmbG9hdCB1X3Bvd2VyOwp1bmlmb3JtIGZsb2F0IHVfc3BlZWQ7CnVuaWZvcm0gZmxvYXQgdV94Owp1bmlmb3JtIGZsb2F0IHVfeTsKdW5pZm9ybSBmbG9hdCB1X2l0ZXJhdGlvbnM7CiAgICAKI2RlZmluZSBwb3dlciAxLgojZGVmaW5lIHpvb21PdXQgMy4KI2RlZmluZSByb3QgMS4KI2RlZmluZSBpdGVyIDUwLgojZGVmaW5lIGh1ZVBvd2VyIDAuNwojZGVmaW5lIGdsb3cgMC41CiNkZWZpbmUgU3BlZWQgMS41CiNkZWZpbmUgV2F2ZVNwZWVkIDIuCiNkZWZpbmUgQnJpZ2h0bmVzcyAwLjUKCnZvaWQgbWFpbigpCnsKICAgIC8vIE5vcm1hbGl6ZWQgcGl4ZWwgY29vcmRpbmF0ZXMgKGZyb20gMCB0byAxKQogICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CgoJdmVjMiBYWVNjYWxlID0gdmVjMigxLjAtdV9zY2FsZSwxLjAtdV9zY2FsZSk7Cgl2ZWMyIFhZTW92ZSA9IHZlYzIodV94LHVfeSk7CglmbG9hdCBpdGVyYXRpb25zID0gaXRlciAqIHVfaXRlcmF0aW9uczsKCiAgdXYgKj0gem9vbU91dDsKCXV2Lnh5ID0gdXYueHkgKiBYWVNjYWxlOwoJdXYueHkgPSB1di54eSArIFhZTW92ZTsKCXZlYzMgZmluYWxDb2wgPSB2ZWMzKDAsMCwwKTsKCWZsb2F0IGhhbGZEaXN0b3J0ID0gdV9kaXN0b3J0X3NjYWxlIC8gMC41OwoJZmxvYXQgZGlzdG9ydHNjMiA9IHVfZGlzdG9ydF9zY2FsZSAvIHVfZGlzdG9ydF9zY2FsZSArIGhhbGZEaXN0b3J0OwogICAgCglmb3IoZmxvYXQgaSA9IDEuMDsgaSA8IGl0ZXJhdGlvbnM7IGkrKyl7CgkJdXYueCArPSB1X3Bvd2VyIC8gaSAqIHNpbihpICogdV9kaXN0b3J0X3NjYWxlICogdXYueSAtICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCQl1di55ICs9IHVfcG93ZXIgLyBpICogc2luKGkgKiBkaXN0b3J0c2MyICogdXYueCArICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCX0KICAgIAoJdmVjMyBjb2wgPSB2ZWMzKHZlYzMoZ2xvdyxnbG93LGdsb3cpL3NpbigodV90aW1lKldhdmVTcGVlZCp1X3NwZWVkKS1sZW5ndGgodXYueXgpIC0gdXYueSkpOwoJZmluYWxDb2wgPSB2ZWMzKGNvbCpjb2wpOwogICAgdmVjMyBDb2xvciA9IHZlYzMoMS4sMS4sMS4pICogQnJpZ2h0bmVzczsKCQogICAgQ29sb3IgPSBDb2xvcipDb2xvciAqIDAuNSArIDAuNSpjb3MoKHVfdGltZSp1X3NwZWVkKSt1di54eXgrdmVjMygwLDIsNCkpICogaHVlUG93ZXI7CgoKICAgIC8vIE91dHB1dCB0byBzY3JlZW4KICAgIGdsX0ZyYWdDb2xvciA9IHZlYzQoZmluYWxDb2wucmdiICogQ29sb3IsIDEuMCkgKiBwb3dlcjsKfWAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVydGV4U2hhZGVyOiBgLy8gVmVydGV4IHNoYWRlcgoKdm9pZCBtYWluKCkgewogIGdsX1Bvc2l0aW9uID0gcHJvamVjdGlvbk1hdHJpeCAqIG1vZGVsVmlld01hdHJpeCAqIHZlYzQocG9zaXRpb24sIDEuMCk7Cn1gLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaWZvcm1zOiB7InVfY29sb3IiOnsidmFsdWUiOlsxLDAsMF19LCJ1X3NjYWxlIjp7InZhbHVlIjowLjIxfSwidV9kaXN0b3J0X3NjYWxlIjp7InZhbHVlIjowLjUzNX0sInVfcG93ZXIiOnsidmFsdWUiOjAuMTU3fSwidV9zcGVlZCI6eyJ2YWx1ZSI6MC4yMjJ9LCJ1X3giOnsidmFsdWUiOjAuNX0sInVfeSI6eyJ2YWx1ZSI6MC44NTl9LCJ1X2l0ZXJhdGlvbnMiOnsidmFsdWUiOjAuMTIyfSwidV90aW1lIjp7InZhbHVlIjowfSwidV9tb3VzZSI6eyJ2YWx1ZSI6WzAsMF19LCJ1X3Jlc29sdXRpb24iOnsidmFsdWUiOlsxMDI0LDEwMjRdfX0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lTGluZXdpZHRoOiAwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpdGhlcmluZzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmxhdFNoYWRpbmc6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG91YmxlU2lkZWQ6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2xzbFZlcnNpb246ICIxMDAiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICApOyAgCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS5yZW5kZXIoUmVhY3QuY3JlYXRlRWxlbWVudChDYW52YXMsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2w6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVzZXJ2ZURyYXdpbmdCdWZmZXI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlbXVsdGlwbGllZEFscGhhOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbHBoYTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc3BhcmVudDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbnRpYWxpYXM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlY2lzaW9uOiAiaGlnaHAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvd2VyUHJlZmVyZW5jZTogImhpZ2gtcGVyZm9ybWFuY2UiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZHByOiBbMiwyXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbWVyYTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvdjogNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmVhcjogMC4xLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZhcjogMTAwMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogWzAsMCw1XQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlOnsgaGVpZ2h0OiA1MTIsIHdpZHRoOiA1MTIgfQogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KFRleHR1cmVNZXNoKSAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICksIGRvY3VtZW50LmJvZHkpOwogICAgICAgICAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgICAgIDwvaGVhZD4KICAgICAgICAgICAgPGJvZHk+CjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9seWdpYS5mNzQ5MDU5NC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvYWRkLmE1NTI0MGRkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9ib29rLjVmYjExYjhkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9jb2RlLjQyOGIxOGY1LnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9vdmVyZmxvdy44ZDUwNDE1ZC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvY2xvc2UuNjRiODBkMDAuc3ZnIC0tPgoKPCEtLSBBU1NFVCBOT1QgSU5MSU5FRDogYXNzZXRzL3RyYXNoLjUyNGRiY2QzLnN2ZyAtLT4KPC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 512px;height:512px;" /></iframe>
+</button>
+ <button onclick="window.open('https://leslovespells.godaddysites.com/', '_blank')">
+        <span>HOME</span> 
+        <iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgICAgIDxoZWFkPgogICAgICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KICAgICAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgICAgICBodG1sLCBib2R5LCBpZnJhbWUsIGNhbnZhc3sKICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgICAgIDxzY3JpcHQgdHlwZT0ibW9kdWxlIj4KICAgICAgICAgICAgICAgICAgICBpbXBvcnQgUmVhY3QsIHt1c2VSZWZ9IGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0QDE4LjAuMic7CiAgICAgICAgICAgICAgICAgICAgaW1wb3J0IFJlYWN0RE9NIGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0LWRvbUAxOC4wLjInOwogICAgICAgICAgICAgICAgICAgIGltcG9ydCB7Q2FudmFzLCB1c2VGcmFtZX0gZnJvbSAnaHR0cHM6Ly9jZG4uc2t5cGFjay5kZXYvQHJlYWN0LXRocmVlL2ZpYmVyQDcuMC4yNCc7CgogICAgICAgICAgICAgICAgICAgIGNvbnN0IFRleHR1cmVNZXNoID0gKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBtZXNoID0gdXNlUmVmKG51bGwpCiAgICAgICAgICAgICAgICAgICAgICAgIHVzZUZyYW1lKHN0YXRlID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgY2xvY2ssIG1vdXNlLCBnbCwgc2NlbmUsIGNhbWVyYSB9ID0gc3RhdGUKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1lc2guY3VycmVudCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzaC5jdXJyZW50Lm1hdGVyaWFsLnVuaWZvcm1zLnVfbW91c2UudmFsdWUgPSBbbW91c2UueCwgbW91c2UueV0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNoLmN1cnJlbnQubWF0ZXJpYWwudW5pZm9ybXMudV90aW1lLnZhbHVlID0gY2xvY2suZ2V0RWxhcHNlZFRpbWUoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNyZWF0ZUVsZW1lbnQoJ21lc2gnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZjptZXNoLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBbMCwwLDBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvdGF0aW9uOiBbMCwwLDBdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgUmVhY3QuY3JlYXRlRWxlbWVudCgncGxhbmVHZW9tZXRyeScse2FyZ3M6WzEwMjQsMTAyNF19KSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KCdzaGFkZXJNYXRlcmlhbCcsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyYWdtZW50U2hhZGVyOiBgLy8gRnJhZ21lbnQgc2hhZGVyCgovLyBVbmlmb3Jtcwp1bmlmb3JtIHZlYzIgdV9yZXNvbHV0aW9uOwp1bmlmb3JtIHZlYzIgdV9tb3VzZTsKdW5pZm9ybSBmbG9hdCB1X3RpbWU7CnVuaWZvcm0gdmVjMyB1X2NvbG9yOwp1bmlmb3JtIGZsb2F0IHVfc2NhbGU7IAp1bmlmb3JtIGZsb2F0IHVfZGlzdG9ydF9zY2FsZTsKdW5pZm9ybSBmbG9hdCB1X3Bvd2VyOwp1bmlmb3JtIGZsb2F0IHVfc3BlZWQ7CnVuaWZvcm0gZmxvYXQgdV94Owp1bmlmb3JtIGZsb2F0IHVfeTsKdW5pZm9ybSBmbG9hdCB1X2l0ZXJhdGlvbnM7CiAgICAKI2RlZmluZSBwb3dlciAxLgojZGVmaW5lIHpvb21PdXQgMy4KI2RlZmluZSByb3QgMS4KI2RlZmluZSBpdGVyIDUwLgojZGVmaW5lIGh1ZVBvd2VyIDAuNwojZGVmaW5lIGdsb3cgMC41CiNkZWZpbmUgU3BlZWQgMS41CiNkZWZpbmUgV2F2ZVNwZWVkIDIuCiNkZWZpbmUgQnJpZ2h0bmVzcyAwLjUKCnZvaWQgbWFpbigpCnsKICAgIC8vIE5vcm1hbGl6ZWQgcGl4ZWwgY29vcmRpbmF0ZXMgKGZyb20gMCB0byAxKQogICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CgoJdmVjMiBYWVNjYWxlID0gdmVjMigxLjAtdV9zY2FsZSwxLjAtdV9zY2FsZSk7Cgl2ZWMyIFhZTW92ZSA9IHZlYzIodV94LHVfeSk7CglmbG9hdCBpdGVyYXRpb25zID0gaXRlciAqIHVfaXRlcmF0aW9uczsKCiAgdXYgKj0gem9vbU91dDsKCXV2Lnh5ID0gdXYueHkgKiBYWVNjYWxlOwoJdXYueHkgPSB1di54eSArIFhZTW92ZTsKCXZlYzMgZmluYWxDb2wgPSB2ZWMzKDAsMCwwKTsKCWZsb2F0IGhhbGZEaXN0b3J0ID0gdV9kaXN0b3J0X3NjYWxlIC8gMC41OwoJZmxvYXQgZGlzdG9ydHNjMiA9IHVfZGlzdG9ydF9zY2FsZSAvIHVfZGlzdG9ydF9zY2FsZSArIGhhbGZEaXN0b3J0OwogICAgCglmb3IoZmxvYXQgaSA9IDEuMDsgaSA8IGl0ZXJhdGlvbnM7IGkrKyl7CgkJdXYueCArPSB1X3Bvd2VyIC8gaSAqIHNpbihpICogdV9kaXN0b3J0X3NjYWxlICogdXYueSAtICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCQl1di55ICs9IHVfcG93ZXIgLyBpICogc2luKGkgKiBkaXN0b3J0c2MyICogdXYueCArICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCX0KICAgIAoJdmVjMyBjb2wgPSB2ZWMzKHZlYzMoZ2xvdyxnbG93LGdsb3cpL3NpbigodV90aW1lKldhdmVTcGVlZCp1X3NwZWVkKS1sZW5ndGgodXYueXgpIC0gdXYueSkpOwoJZmluYWxDb2wgPSB2ZWMzKGNvbCpjb2wpOwogICAgdmVjMyBDb2xvciA9IHZlYzMoMS4sMS4sMS4pICogQnJpZ2h0bmVzczsKCQogICAgQ29sb3IgPSBDb2xvcipDb2xvciAqIDAuNSArIDAuNSpjb3MoKHVfdGltZSp1X3NwZWVkKSt1di54eXgrdmVjMygwLDIsNCkpICogaHVlUG93ZXI7CgoKICAgIC8vIE91dHB1dCB0byBzY3JlZW4KICAgIGdsX0ZyYWdDb2xvciA9IHZlYzQoZmluYWxDb2wucmdiICogQ29sb3IsIDEuMCkgKiBwb3dlcjsKfWAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVydGV4U2hhZGVyOiBgLy8gVmVydGV4IHNoYWRlcgoKdm9pZCBtYWluKCkgewogIGdsX1Bvc2l0aW9uID0gcHJvamVjdGlvbk1hdHJpeCAqIG1vZGVsVmlld01hdHJpeCAqIHZlYzQocG9zaXRpb24sIDEuMCk7Cn1gLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaWZvcm1zOiB7InVfY29sb3IiOnsidmFsdWUiOlsxLDAsMF19LCJ1X3NjYWxlIjp7InZhbHVlIjowLjIxfSwidV9kaXN0b3J0X3NjYWxlIjp7InZhbHVlIjowLjUzNX0sInVfcG93ZXIiOnsidmFsdWUiOjAuMTU3fSwidV9zcGVlZCI6eyJ2YWx1ZSI6MC4yMjJ9LCJ1X3giOnsidmFsdWUiOjAuNX0sInVfeSI6eyJ2YWx1ZSI6MC44NTl9LCJ1X2l0ZXJhdGlvbnMiOnsidmFsdWUiOjAuMTIyfSwidV90aW1lIjp7InZhbHVlIjowfSwidV9tb3VzZSI6eyJ2YWx1ZSI6WzAsMF19LCJ1X3Jlc29sdXRpb24iOnsidmFsdWUiOlsxMDI0LDEwMjRdfX0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lTGluZXdpZHRoOiAwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpdGhlcmluZzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmxhdFNoYWRpbmc6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG91YmxlU2lkZWQ6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2xzbFZlcnNpb246ICIxMDAiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICApOyAgCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS5yZW5kZXIoUmVhY3QuY3JlYXRlRWxlbWVudChDYW52YXMsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2w6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVzZXJ2ZURyYXdpbmdCdWZmZXI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlbXVsdGlwbGllZEFscGhhOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbHBoYTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc3BhcmVudDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbnRpYWxpYXM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlY2lzaW9uOiAiaGlnaHAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvd2VyUHJlZmVyZW5jZTogImhpZ2gtcGVyZm9ybWFuY2UiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZHByOiBbMiwyXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbWVyYTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvdjogNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmVhcjogMC4xLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZhcjogMTAwMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogWzAsMCw1XQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlOnsgaGVpZ2h0OiA1MTIsIHdpZHRoOiA1MTIgfQogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KFRleHR1cmVNZXNoKSAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICksIGRvY3VtZW50LmJvZHkpOwogICAgICAgICAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgICAgIDwvaGVhZD4KICAgICAgICAgICAgPGJvZHk+CjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9seWdpYS5mNzQ5MDU5NC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvYWRkLmE1NTI0MGRkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9ib29rLjVmYjExYjhkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9jb2RlLjQyOGIxOGY1LnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9vdmVyZmxvdy44ZDUwNDE1ZC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvY2xvc2UuNjRiODBkMDAuc3ZnIC0tPgoKPCEtLSBBU1NFVCBOT1QgSU5MSU5FRDogYXNzZXRzL3RyYXNoLjUyNGRiY2QzLnN2ZyAtLT4KPC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 512px;height:512px;" /></iframe>
+</button>
+<button onclick="window.open('https://leslovespells.godaddysites.com/health-%26-wellness', '_blank')">
+        <span>HEALTH</span>
+        <iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgICAgIDxoZWFkPgogICAgICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KICAgICAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgICAgICBodG1sLCBib2R5LCBpZnJhbWUsIGNhbnZhc3sKICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgICAgIDxzY3JpcHQgdHlwZT0ibW9kdWxlIj4KICAgICAgICAgICAgICAgICAgICBpbXBvcnQgUmVhY3QsIHt1c2VSZWZ9IGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0QDE4LjAuMic7CiAgICAgICAgICAgICAgICAgICAgaW1wb3J0IFJlYWN0RE9NIGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0LWRvbUAxOC4wLjInOwogICAgICAgICAgICAgICAgICAgIGltcG9ydCB7Q2FudmFzLCB1c2VGcmFtZX0gZnJvbSAnaHR0cHM6Ly9jZG4uc2t5cGFjay5kZXYvQHJlYWN0LXRocmVlL2ZpYmVyQDcuMC4yNCc7CgogICAgICAgICAgICAgICAgICAgIGNvbnN0IFRleHR1cmVNZXNoID0gKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBtZXNoID0gdXNlUmVmKG51bGwpCiAgICAgICAgICAgICAgICAgICAgICAgIHVzZUZyYW1lKHN0YXRlID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgY2xvY2ssIG1vdXNlLCBnbCwgc2NlbmUsIGNhbWVyYSB9ID0gc3RhdGUKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1lc2guY3VycmVudCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzaC5jdXJyZW50Lm1hdGVyaWFsLnVuaWZvcm1zLnVfbW91c2UudmFsdWUgPSBbbW91c2UueCwgbW91c2UueV0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNoLmN1cnJlbnQubWF0ZXJpYWwudW5pZm9ybXMudV90aW1lLnZhbHVlID0gY2xvY2suZ2V0RWxhcHNlZFRpbWUoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNyZWF0ZUVsZW1lbnQoJ21lc2gnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZjptZXNoLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBbMCwwLDBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvdGF0aW9uOiBbMCwwLDBdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgUmVhY3QuY3JlYXRlRWxlbWVudCgncGxhbmVHZW9tZXRyeScse2FyZ3M6WzEwMjQsMTAyNF19KSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KCdzaGFkZXJNYXRlcmlhbCcsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyYWdtZW50U2hhZGVyOiBgLy8gRnJhZ21lbnQgc2hhZGVyCgovLyBVbmlmb3Jtcwp1bmlmb3JtIHZlYzIgdV9yZXNvbHV0aW9uOwp1bmlmb3JtIHZlYzIgdV9tb3VzZTsKdW5pZm9ybSBmbG9hdCB1X3RpbWU7CnVuaWZvcm0gdmVjMyB1X2NvbG9yOwp1bmlmb3JtIGZsb2F0IHVfc2NhbGU7IAp1bmlmb3JtIGZsb2F0IHVfZGlzdG9ydF9zY2FsZTsKdW5pZm9ybSBmbG9hdCB1X3Bvd2VyOwp1bmlmb3JtIGZsb2F0IHVfc3BlZWQ7CnVuaWZvcm0gZmxvYXQgdV94Owp1bmlmb3JtIGZsb2F0IHVfeTsKdW5pZm9ybSBmbG9hdCB1X2l0ZXJhdGlvbnM7CiAgICAKI2RlZmluZSBwb3dlciAxLgojZGVmaW5lIHpvb21PdXQgMy4KI2RlZmluZSByb3QgMS4KI2RlZmluZSBpdGVyIDUwLgojZGVmaW5lIGh1ZVBvd2VyIDAuNwojZGVmaW5lIGdsb3cgMC41CiNkZWZpbmUgU3BlZWQgMS41CiNkZWZpbmUgV2F2ZVNwZWVkIDIuCiNkZWZpbmUgQnJpZ2h0bmVzcyAwLjUKCnZvaWQgbWFpbigpCnsKICAgIC8vIE5vcm1hbGl6ZWQgcGl4ZWwgY29vcmRpbmF0ZXMgKGZyb20gMCB0byAxKQogICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CgoJdmVjMiBYWVNjYWxlID0gdmVjMigxLjAtdV9zY2FsZSwxLjAtdV9zY2FsZSk7Cgl2ZWMyIFhZTW92ZSA9IHZlYzIodV94LHVfeSk7CglmbG9hdCBpdGVyYXRpb25zID0gaXRlciAqIHVfaXRlcmF0aW9uczsKCiAgdXYgKj0gem9vbU91dDsKCXV2Lnh5ID0gdXYueHkgKiBYWVNjYWxlOwoJdXYueHkgPSB1di54eSArIFhZTW92ZTsKCXZlYzMgZmluYWxDb2wgPSB2ZWMzKDAsMCwwKTsKCWZsb2F0IGhhbGZEaXN0b3J0ID0gdV9kaXN0b3J0X3NjYWxlIC8gMC41OwoJZmxvYXQgZGlzdG9ydHNjMiA9IHVfZGlzdG9ydF9zY2FsZSAvIHVfZGlzdG9ydF9zY2FsZSArIGhhbGZEaXN0b3J0OwogICAgCglmb3IoZmxvYXQgaSA9IDEuMDsgaSA8IGl0ZXJhdGlvbnM7IGkrKyl7CgkJdXYueCArPSB1X3Bvd2VyIC8gaSAqIHNpbihpICogdV9kaXN0b3J0X3NjYWxlICogdXYueSAtICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCQl1di55ICs9IHVfcG93ZXIgLyBpICogc2luKGkgKiBkaXN0b3J0c2MyICogdXYueCArICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCX0KICAgIAoJdmVjMyBjb2wgPSB2ZWMzKHZlYzMoZ2xvdyxnbG93LGdsb3cpL3NpbigodV90aW1lKldhdmVTcGVlZCp1X3NwZWVkKS1sZW5ndGgodXYueXgpIC0gdXYueSkpOwoJZmluYWxDb2wgPSB2ZWMzKGNvbCpjb2wpOwogICAgdmVjMyBDb2xvciA9IHZlYzMoMS4sMS4sMS4pICogQnJpZ2h0bmVzczsKCQogICAgQ29sb3IgPSBDb2xvcipDb2xvciAqIDAuNSArIDAuNSpjb3MoKHVfdGltZSp1X3NwZWVkKSt1di54eXgrdmVjMygwLDIsNCkpICogaHVlUG93ZXI7CgoKICAgIC8vIE91dHB1dCB0byBzY3JlZW4KICAgIGdsX0ZyYWdDb2xvciA9IHZlYzQoZmluYWxDb2wucmdiICogQ29sb3IsIDEuMCkgKiBwb3dlcjsKfWAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVydGV4U2hhZGVyOiBgLy8gVmVydGV4IHNoYWRlcgoKdm9pZCBtYWluKCkgewogIGdsX1Bvc2l0aW9uID0gcHJvamVjdGlvbk1hdHJpeCAqIG1vZGVsVmlld01hdHJpeCAqIHZlYzQocG9zaXRpb24sIDEuMCk7Cn1gLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaWZvcm1zOiB7InVfY29sb3IiOnsidmFsdWUiOlsxLDAsMF19LCJ1X3NjYWxlIjp7InZhbHVlIjowLjIxfSwidV9kaXN0b3J0X3NjYWxlIjp7InZhbHVlIjowLjUzNX0sInVfcG93ZXIiOnsidmFsdWUiOjAuMTU3fSwidV9zcGVlZCI6eyJ2YWx1ZSI6MC4yMjJ9LCJ1X3giOnsidmFsdWUiOjAuNX0sInVfeSI6eyJ2YWx1ZSI6MC44NTl9LCJ1X2l0ZXJhdGlvbnMiOnsidmFsdWUiOjAuMTIyfSwidV90aW1lIjp7InZhbHVlIjowfSwidV9tb3VzZSI6eyJ2YWx1ZSI6WzAsMF19LCJ1X3Jlc29sdXRpb24iOnsidmFsdWUiOlsxMDI0LDEwMjRdfX0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lTGluZXdpZHRoOiAwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpdGhlcmluZzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmxhdFNoYWRpbmc6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG91YmxlU2lkZWQ6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2xzbFZlcnNpb246ICIxMDAiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICApOyAgCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS5yZW5kZXIoUmVhY3QuY3JlYXRlRWxlbWVudChDYW52YXMsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2w6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVzZXJ2ZURyYXdpbmdCdWZmZXI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlbXVsdGlwbGllZEFscGhhOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbHBoYTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc3BhcmVudDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbnRpYWxpYXM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlY2lzaW9uOiAiaGlnaHAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvd2VyUHJlZmVyZW5jZTogImhpZ2gtcGVyZm9ybWFuY2UiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZHByOiBbMiwyXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbWVyYTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvdjogNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmVhcjogMC4xLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZhcjogMTAwMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogWzAsMCw1XQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlOnsgaGVpZ2h0OiA1MTIsIHdpZHRoOiA1MTIgfQogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KFRleHR1cmVNZXNoKSAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICksIGRvY3VtZW50LmJvZHkpOwogICAgICAgICAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgICAgIDwvaGVhZD4KICAgICAgICAgICAgPGJvZHk+CjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9seWdpYS5mNzQ5MDU5NC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvYWRkLmE1NTI0MGRkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9ib29rLjVmYjExYjhkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9jb2RlLjQyOGIxOGY1LnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9vdmVyZmxvdy44ZDUwNDE1ZC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvY2xvc2UuNjRiODBkMDAuc3ZnIC0tPgoKPCEtLSBBU1NFVCBOT1QgSU5MSU5FRDogYXNzZXRzL3RyYXNoLjUyNGRiY2QzLnN2ZyAtLT4KPC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 512px;height:512px;" /></iframe>
+</button> 
+ <button onclick="window.open('https://leslovespells.godaddysites.com/protection-%26-justice-1', '_blank')">
+        <span>PROTECTION</span>  
+        <iframe src="data:text/html;base64,PGh0bWw+CiAgICAgICAgICAgIDxoZWFkPgogICAgICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KICAgICAgICAgICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgICAgICAgICBodG1sLCBib2R5LCBpZnJhbWUsIGNhbnZhc3sKICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDA7CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgPC9zdHlsZT4KICAgICAgICAgICAgICAgIDxzY3JpcHQgdHlwZT0ibW9kdWxlIj4KICAgICAgICAgICAgICAgICAgICBpbXBvcnQgUmVhY3QsIHt1c2VSZWZ9IGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0QDE4LjAuMic7CiAgICAgICAgICAgICAgICAgICAgaW1wb3J0IFJlYWN0RE9NIGZyb20gJ2h0dHBzOi8vY2RuLnNreXBhY2suZGV2L3JlYWN0LWRvbUAxOC4wLjInOwogICAgICAgICAgICAgICAgICAgIGltcG9ydCB7Q2FudmFzLCB1c2VGcmFtZX0gZnJvbSAnaHR0cHM6Ly9jZG4uc2t5cGFjay5kZXYvQHJlYWN0LXRocmVlL2ZpYmVyQDcuMC4yNCc7CgogICAgICAgICAgICAgICAgICAgIGNvbnN0IFRleHR1cmVNZXNoID0gKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBtZXNoID0gdXNlUmVmKG51bGwpCiAgICAgICAgICAgICAgICAgICAgICAgIHVzZUZyYW1lKHN0YXRlID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHsgY2xvY2ssIG1vdXNlLCBnbCwgc2NlbmUsIGNhbWVyYSB9ID0gc3RhdGUKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1lc2guY3VycmVudCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVzaC5jdXJyZW50Lm1hdGVyaWFsLnVuaWZvcm1zLnVfbW91c2UudmFsdWUgPSBbbW91c2UueCwgbW91c2UueV0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNoLmN1cnJlbnQubWF0ZXJpYWwudW5pZm9ybXMudV90aW1lLnZhbHVlID0gY2xvY2suZ2V0RWxhcHNlZFRpbWUoKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNyZWF0ZUVsZW1lbnQoJ21lc2gnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZjptZXNoLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBbMCwwLDBdLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvdGF0aW9uOiBbMCwwLDBdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgUmVhY3QuY3JlYXRlRWxlbWVudCgncGxhbmVHZW9tZXRyeScse2FyZ3M6WzEwMjQsMTAyNF19KSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KCdzaGFkZXJNYXRlcmlhbCcsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZyYWdtZW50U2hhZGVyOiBgLy8gRnJhZ21lbnQgc2hhZGVyCgovLyBVbmlmb3Jtcwp1bmlmb3JtIHZlYzIgdV9yZXNvbHV0aW9uOwp1bmlmb3JtIHZlYzIgdV9tb3VzZTsKdW5pZm9ybSBmbG9hdCB1X3RpbWU7CnVuaWZvcm0gdmVjMyB1X2NvbG9yOwp1bmlmb3JtIGZsb2F0IHVfc2NhbGU7IAp1bmlmb3JtIGZsb2F0IHVfZGlzdG9ydF9zY2FsZTsKdW5pZm9ybSBmbG9hdCB1X3Bvd2VyOwp1bmlmb3JtIGZsb2F0IHVfc3BlZWQ7CnVuaWZvcm0gZmxvYXQgdV94Owp1bmlmb3JtIGZsb2F0IHVfeTsKdW5pZm9ybSBmbG9hdCB1X2l0ZXJhdGlvbnM7CiAgICAKI2RlZmluZSBwb3dlciAxLgojZGVmaW5lIHpvb21PdXQgMy4KI2RlZmluZSByb3QgMS4KI2RlZmluZSBpdGVyIDUwLgojZGVmaW5lIGh1ZVBvd2VyIDAuNwojZGVmaW5lIGdsb3cgMC41CiNkZWZpbmUgU3BlZWQgMS41CiNkZWZpbmUgV2F2ZVNwZWVkIDIuCiNkZWZpbmUgQnJpZ2h0bmVzcyAwLjUKCnZvaWQgbWFpbigpCnsKICAgIC8vIE5vcm1hbGl6ZWQgcGl4ZWwgY29vcmRpbmF0ZXMgKGZyb20gMCB0byAxKQogICAgdmVjMiB1diA9IGdsX0ZyYWdDb29yZC54eS91X3Jlc29sdXRpb24ueHk7CgoJdmVjMiBYWVNjYWxlID0gdmVjMigxLjAtdV9zY2FsZSwxLjAtdV9zY2FsZSk7Cgl2ZWMyIFhZTW92ZSA9IHZlYzIodV94LHVfeSk7CglmbG9hdCBpdGVyYXRpb25zID0gaXRlciAqIHVfaXRlcmF0aW9uczsKCiAgdXYgKj0gem9vbU91dDsKCXV2Lnh5ID0gdXYueHkgKiBYWVNjYWxlOwoJdXYueHkgPSB1di54eSArIFhZTW92ZTsKCXZlYzMgZmluYWxDb2wgPSB2ZWMzKDAsMCwwKTsKCWZsb2F0IGhhbGZEaXN0b3J0ID0gdV9kaXN0b3J0X3NjYWxlIC8gMC41OwoJZmxvYXQgZGlzdG9ydHNjMiA9IHVfZGlzdG9ydF9zY2FsZSAvIHVfZGlzdG9ydF9zY2FsZSArIGhhbGZEaXN0b3J0OwogICAgCglmb3IoZmxvYXQgaSA9IDEuMDsgaSA8IGl0ZXJhdGlvbnM7IGkrKyl7CgkJdXYueCArPSB1X3Bvd2VyIC8gaSAqIHNpbihpICogdV9kaXN0b3J0X3NjYWxlICogdXYueSAtICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCQl1di55ICs9IHVfcG93ZXIgLyBpICogc2luKGkgKiBkaXN0b3J0c2MyICogdXYueCArICh1X3RpbWUgKiBTcGVlZCAqIHVfc3BlZWQpKTsKCX0KICAgIAoJdmVjMyBjb2wgPSB2ZWMzKHZlYzMoZ2xvdyxnbG93LGdsb3cpL3NpbigodV90aW1lKldhdmVTcGVlZCp1X3NwZWVkKS1sZW5ndGgodXYueXgpIC0gdXYueSkpOwoJZmluYWxDb2wgPSB2ZWMzKGNvbCpjb2wpOwogICAgdmVjMyBDb2xvciA9IHZlYzMoMS4sMS4sMS4pICogQnJpZ2h0bmVzczsKCQogICAgQ29sb3IgPSBDb2xvcipDb2xvciAqIDAuNSArIDAuNSpjb3MoKHVfdGltZSp1X3NwZWVkKSt1di54eXgrdmVjMygwLDIsNCkpICogaHVlUG93ZXI7CgoKICAgIC8vIE91dHB1dCB0byBzY3JlZW4KICAgIGdsX0ZyYWdDb2xvciA9IHZlYzQoZmluYWxDb2wucmdiICogQ29sb3IsIDEuMCkgKiBwb3dlcjsKfWAsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVydGV4U2hhZGVyOiBgLy8gVmVydGV4IHNoYWRlcgoKdm9pZCBtYWluKCkgewogIGdsX1Bvc2l0aW9uID0gcHJvamVjdGlvbk1hdHJpeCAqIG1vZGVsVmlld01hdHJpeCAqIHZlYzQocG9zaXRpb24sIDEuMCk7Cn1gLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVuaWZvcm1zOiB7InVfY29sb3IiOnsidmFsdWUiOlsxLDAsMF19LCJ1X3NjYWxlIjp7InZhbHVlIjowLjIxfSwidV9kaXN0b3J0X3NjYWxlIjp7InZhbHVlIjowLjUzNX0sInVfcG93ZXIiOnsidmFsdWUiOjAuMTU3fSwidV9zcGVlZCI6eyJ2YWx1ZSI6MC4yMjJ9LCJ1X3giOnsidmFsdWUiOjAuNX0sInVfeSI6eyJ2YWx1ZSI6MC44NTl9LCJ1X2l0ZXJhdGlvbnMiOnsidmFsdWUiOjAuMTIyfSwidV90aW1lIjp7InZhbHVlIjowfSwidV9tb3VzZSI6eyJ2YWx1ZSI6WzAsMF19LCJ1X3Jlc29sdXRpb24iOnsidmFsdWUiOlsxMDI0LDEwMjRdfX0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lOiBmYWxzZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lyZWZyYW1lTGluZXdpZHRoOiAwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpdGhlcmluZzogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmxhdFNoYWRpbmc6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG91YmxlU2lkZWQ6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2xzbFZlcnNpb246ICIxMDAiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgICAgICAgICApOyAgCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBSZWFjdERPTS5yZW5kZXIoUmVhY3QuY3JlYXRlRWxlbWVudChDYW52YXMsewogICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2w6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVzZXJ2ZURyYXdpbmdCdWZmZXI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlbXVsdGlwbGllZEFscGhhOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbHBoYTogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc3BhcmVudDogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbnRpYWxpYXM6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlY2lzaW9uOiAiaGlnaHAiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvd2VyUHJlZmVyZW5jZTogImhpZ2gtcGVyZm9ybWFuY2UiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZHByOiBbMiwyXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbWVyYTogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvdjogNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmVhcjogMC4xLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZhcjogMTAwMCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogWzAsMCw1XQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlOnsgaGVpZ2h0OiA1MTIsIHdpZHRoOiA1MTIgfQogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICBSZWFjdC5jcmVhdGVFbGVtZW50KFRleHR1cmVNZXNoKSAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICksIGRvY3VtZW50LmJvZHkpOwogICAgICAgICAgICAgICAgPC9zY3JpcHQ+CiAgICAgICAgICAgIDwvaGVhZD4KICAgICAgICAgICAgPGJvZHk+CjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9seWdpYS5mNzQ5MDU5NC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvYWRkLmE1NTI0MGRkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9ib29rLjVmYjExYjhkLnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9jb2RlLjQyOGIxOGY1LnN2ZyAtLT4KCjwhLS0gQVNTRVQgTk9UIElOTElORUQ6IGFzc2V0cy9vdmVyZmxvdy44ZDUwNDE1ZC5zdmcgLS0+Cgo8IS0tIEFTU0VUIE5PVCBJTkxJTkVEOiBhc3NldHMvY2xvc2UuNjRiODBkMDAuc3ZnIC0tPgoKPCEtLSBBU1NFVCBOT1QgSU5MSU5FRDogYXNzZXRzL3RyYXNoLjUyNGRiY2QzLnN2ZyAtLT4KPC9ib2R5PgogICAgICAgIDwvaHRtbD4=" style="border:0;margin:0;width: 512px;height:512px;" /></iframe>
+</button>
+</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Add CSS to make the iframe responsive and remove scroll bars */
+  .iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio for responsive design */
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="iframe-container">
+  <iframe src="https://skybox.blockadelabs.com/e/1e83369b402f5eabf5a1f8d4220c6cf4" allowfullscreen></iframe>
+</div>
+
+</body>
+</html>
