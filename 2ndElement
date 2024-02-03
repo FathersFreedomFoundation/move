@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIMOIRE</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* This will hide the default scrollbars */
+      background: #000; /* Setting the background to black */
+    }
+
+    #title {
+      position: absolute;
+      top: 20%; /* Adjusted to reduce vertical space */
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 35px;
+      letter-spacing: 12px;
+      margin-top: -20px; /* Adjusted to reduce vertical space */
+      padding-left: 10px;
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>THE UNIVERSE </span><br><span>GUIDED YOU HERE</span>
+  </div>
+</body>
+</html>
