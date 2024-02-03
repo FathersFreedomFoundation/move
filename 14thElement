@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROSPERITY & WEALTH</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden; /* Hides default scrollbars */
+      background: #000; /* Black background */
+    }
+
+    #title {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for perfect centering */
+      text-align: center;
+      color: #FFF;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 6vw; /* Responsive font size */
+      letter-spacing: 0.6vw; /* Responsive letter spacing */
+    }
+    
+    #title span {
+      background: -webkit-linear-gradient(white, #38495a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 600px) {
+      #title {
+        font-size: 10vw; /* Larger font size for smaller screens */
+        letter-spacing: 1vw; /* Larger letter spacing for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <span>PROTECTION & JUSTICE</span>
+  </div>
+</body>
+</html>
