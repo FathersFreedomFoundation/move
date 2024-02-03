@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards Display</title>
+    <style>
+        /* Hide scrollbar for all elements and prevent scrolling on the entire page */
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 500px; /* Adjusted width to match the image */
+            height: 500px; /* Adjusted height to match the image */
+            margin: 10px;
+            border: none;
+            perspective: 1000px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flip .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+        }
+
+        .flip-card-front {
+            background-color: transparent;
+        }
+
+        .flip-card-back {
+            background-color: transparent;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front img, .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+
+        .show-button {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Adjustments to the glowing effect */
+        .flip-card::before, .flip-card::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 700px; /* Adjusted to match the image size */
+            height: 700px; /* Adjusted to match the image size */
+            transform: translate(-50%, -50%); /* Centering pivot */
+            border-radius: 40%;
+            background-image: url('https://i.imgur.com/KygFcuA.png'); /* Direct URL of the wheel image */
+            background-size: cover;
+            z-index: -1;
+            animation: spin 33.55s linear infinite;
+        }
+
+        /* Keyframes for the spinning animation */
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- Flip Card -->
+        <div class="flip-card" onclick="flipCard(this);">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://i.imgur.com/hBSrtar.png" alt="Card Front"> <!-- Use the direct URL of the wheel image -->
+                </div>
+                <div class="flip-card-back">
+                    <img src="your-image-url.png" alt="Card Back"> <!-- Use the direct URL of the wheel image -->
+                    <button class="show-button" onclick="this.style.display = 'none';">Hide Button</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional flip cards as needed -->
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flip');
+            setTimeout(function () {
+                // Open the URL in a new window/tab
+                window.open('https://leslovespells.godaddysites.com/love', '_blank');
+            }, 800); // Delay the redirection for 800 milliseconds (0.8 seconds)
+        }
+
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+</html>
